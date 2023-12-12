@@ -37,6 +37,7 @@ let questionBox = document.querySelector("#question-title")
 let time = document.querySelector("#time");
 let endScreen = document.querySelector("#end-screen");
 let scoreEl = document.querySelector("#final-score");
+const HIGHSCORES_KEY = "Quiz-Highscores";
 
 
 // Create an array of objects for all questions and answers
@@ -168,3 +169,36 @@ function endQuiz() {
 // create an variable for the interval that counts down the alloted time
 //Create an interval to subtract from the timer every time the user clicks 
 //Create a function to stop the timer when all questions are answered or timer gets to zero
+
+let highScoresButton = document.querySelector("#submit-highscore");
+highScoresButton.addEventListener("click", function (event) {
+event.preventDefault();
+
+    let highScoresInput = document.querySelector("#highscores-input");
+
+    if (highScoresInput.value.trim() === "") {
+        window.alert("Initials are required. Try Again.");
+        return
+    }
+
+    // retrieve the previous scores if any 
+    let previousScores = localStorage.getItem(HIGHSCORES_KEY) ? JSON.parse(localStorage.getItem(HIGHSCORES_KEY)) : [];
+    // create highscore object for player
+
+    // {
+    //     score: 10,
+    //     initials: 'NM'
+    // }
+
+    let newHighScoreEntry = {
+        score: score,
+        initials: highScoresInput.value.trim()
+    }
+    previousScores.push(newHighScoreEntry);
+
+    // save under the appropriate key
+    localStorage.setItem(HIGHSCORES_KEY, JSON.stringify(previousScores));
+    // redirect to the highscores html page
+
+
+})
