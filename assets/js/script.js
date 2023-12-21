@@ -199,6 +199,6 @@ event.preventDefault();
     // save under the appropriate key
     localStorage.setItem(HIGHSCORES_KEY, JSON.stringify(previousScores));
     // redirect to the highscores html page
-
+    window.location.href = "highscores.html"
 
 })
