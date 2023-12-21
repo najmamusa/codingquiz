@@ -8,7 +8,7 @@ The project contains  JavaScript, HTML, CSS, querySelector, innerHTML and web AP
 
 ## Instructions
 
-Please utilize the provided link for accessing the challenge: https://najmamusa.github.io/codingquiz/Links to an external site.. This will launch the application in your default web browser. 
+Please utilize the provided link for accessing the challenge: https://najmamusa.github.io/codingquiz/. This will launch the application in your default web browser. 
 
 Once the application has loaded, click on "Start Quiz" to initiate the quiz. The first question will be presented along with a list of four choices and a countdown timer set to 100 seconds. 
 
